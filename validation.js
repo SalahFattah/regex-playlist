@@ -6,8 +6,16 @@ let reg={
     "telephone":/^\d{11}$/,
     "slug":/^[a-z\d-]{8,20}$/
 };
+let inputs =document.getElementsByTagName("input");
+// console.log(inputs);
 let tel=document.getElementById("tel");
-console.log(tel);
+// console.log(tel);
+for (let i of inputs){
+    i.addEventListener("keyup",(e)=>{
+        console.log(e.target.attributes.name.value);
+
+    });
+}
 tel.addEventListener("keyup",()=>{
     // console.log(tel.value);
     console.log(reg);
