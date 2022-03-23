@@ -12,16 +12,24 @@ let tel=document.getElementById("tel");
 // console.log(tel);
 for (let i of inputs){
     i.addEventListener("keyup",(e)=>{
-        console.log(e.target.attributes.name.value);
+        // console.log(e.target.attributes.name.value);
+        if(reg[e.target.attributes.name.value].test(i.value)){ 
+            i.classList.remove("notValid");
+            i.classList.add("validated");
+        }else{
+            i.classList.remove("validated");
+            i.classList.add("notValid");
+        }
+
 
     });
 }
-tel.addEventListener("keyup",()=>{
-    // console.log(tel.value);
-    console.log(reg);
-    if(reg.test(tel.value)){ 
-        tel.classList.add("validated");
-    }else{
-        tel.classList.remove("validated");
-    }
-});
+// tel.addEventListener("keyup",()=>{
+//     // console.log(tel.value);
+//     console.log(reg);
+//     if(reg.test(tel.value)){ 
+//         tel.classList.add("validated");
+//     }else{
+//         tel.classList.remove("validated");
+//     }
+// });

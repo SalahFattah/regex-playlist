@@ -20,8 +20,18 @@ input{
     box-sizing: border-box;
     border-radius: 10px;
     border: 3px solid #ccc;
-    outline: none !important;
+    outline: none ;
 }
 .validated{
-    outline: green solid 3px !important;
+    outline: green solid 3px ;
+}
+.notValid{
+    outline: red solid 3px ;
+}
+.validated+p, p{
+    display: none;
+}
+.notValid+p{
+    display: block;
+    color:orange;
 }
